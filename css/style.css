@@ -1,0 +1,211 @@
+#anaimoai-help-chat-container {
+  position: relative;
+  display: inline;
+  color: white;
+  border: none;
+  cursor: pointer;
+  direction: ltr;
+}
+
+.anaimoai-chat-btn-container_1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  bottom: 80px;
+  right: 0;
+  z-index: 1;
+}
+
+.anaimoai-chat-btn-container_1 svg{
+  margin: 10px;
+  margin-top: 0px;
+  height: 75px;
+  width: 75px;
+  z-index: 1;
+  /* This will make the image scale proportionally */
+}
+
+.anaimoai-chat-btn-container_2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  bottom: 80px;
+  left: 0;
+  z-index: 1;
+}
+
+.anaimoai-chat-btn-container_2 svg{
+  margin: 10px;
+  margin-top: 0px;
+  height: 75px;
+  width: 75px;
+  z-index: 1;
+  /* This will make the image scale proportionally */
+}
+
+#anaimoai-chatOverlay {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  /* Set pointer-events to none when closed */
+  overflow: hidden;
+  z-index: 99;
+}
+
+#anaimoai-chatContainer_1 {
+  display: none;
+  position: absolute;
+  bottom: 90px;
+  right: 10px;
+  width: 500px;
+  height: 600px;
+  background-color: whitesmoke;
+  border: 1px solid black;
+  border-radius: 2%;
+  padding: 15px;
+  padding-top: 25px;
+  overflow: hidden;
+  z-index: 99;
+}
+
+#anaimoai-chatContainer_2 {
+  display: none;
+  position: absolute;
+  bottom: 90px;
+  left: 10px;
+  width: 500px;
+  height: 600px;
+  background-color: whitesmoke;
+  border: 1px solid black;
+  border-radius: 2%;
+  padding: 15px;
+  padding-top: 25px;
+  overflow: hidden;
+  z-index: 99;
+}
+
+@media only screen and (max-height: 750px) {
+  #anaimoai-chatContainer_2 {
+    height: 500px;
+  }
+  #anaimoai-chatContainer_1 {
+    height: 500px;
+  }
+}
+
+#anaimoai-chatIframe{
+  overflow: hidden;
+}
+
+#anaimoai-closeChat {
+  position: absolute;
+  color: black;
+  top: 1px;
+  right: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+#anaimoai-minimizeChat {
+  position: absolute;
+  color: black;
+  top: 1px;
+  right: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+@media (max-width: 650px) and (orientation: landscape),
+       (max-width: 650px) and (orientation: portrait) {
+  #anaimoai-chatContainer_1{
+    width: 95%;
+    height: 65%;
+  }
+   
+  #anaimoai-chatContainer_2{
+    width: 95%;
+    height: 65%;
+  }
+}
+
+/* Changes for animated icon */
+
+/* keyframes define the animation */
+@keyframes tilt-left {
+  0% { transform: rotate(0); }
+  10% { transform: rotate(8deg); }
+  30% { transform: rotate(-20deg); }
+  50% { transform: rotate(0); }
+  70% { transform: rotate(-6deg); }
+  100% { transform: rotate(0); }
+}
+@keyframes tilt-right {
+  0% { transform: rotate(0); }
+  10% { transform: rotate(0); }
+  20% { transform: rotate(-8deg); }
+  40% { transform: rotate(20deg); }
+  60% { transform: rotate(0); }
+  80% { transform: rotate(6deg); }
+  100% { transform: rotate(0); }
+}
+
+/* div container class */
+.anim-container-1 {
+  display: flex;
+  background-color: #21345e;
+  border-radius: 50px;
+  bottom: 60px;
+  right: 10px;
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  z-index: 1;
+}
+.anim-container-2 {
+  display: flex;
+  background-color: #21345e;
+  border-radius: 50px;
+  bottom: 60px;
+  left: 10px;
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  z-index: 1;
+}
+/* div content classes */
+.anim-left {
+  position: absolute;
+  bottom: 26px;
+  left: 20px;
+  width: 48px;
+  height: 32px;
+}
+.anim-right {
+  position: absolute;
+  top: 26px;
+  right: 20px;
+  width: 48px;
+  height: 32px;
+}
+/* div animation classes */
+.animate .anim-left,
+.animate .anim-right {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+.animate .anim-left {
+  transform-origin: bottom left;
+  animation-name: tilt-left;
+}
+.animate .anim-right {
+  transform-origin: bottom right;
+  animation-name: tilt-right;
+}
+
